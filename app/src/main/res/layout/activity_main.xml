@@ -15,7 +15,7 @@
         android:layout_gravity="center_horizontal"
         app:arcWidth="30dp"
         app:circleRadius="100dp"
-        app:centerTextSize="30sp"
+        app:centerTextSize="40sp"
         app:arcColor="@color/colorPrimary"
         app:centerTextColor="@color/colorAccent"
         app:arcStartColor="@android:color/holo_green_light"/>

@@ -30,7 +30,7 @@ public class CirclePercentBar extends View{
     private Paint centerTextPaint;
     private RectF arcRectF;
     private Rect textBoundRect;
-    private float mCurData=0;
+    private int mCurData=0;
     private int arcStartColor;
     private int arcEndColor;
     private Paint startCirclePaint;
@@ -140,14 +140,14 @@ public class CirclePercentBar extends View{
 
     }
 
-    public void setPercentData(float data, TimeInterpolator interpolator){
-        ValueAnimator valueAnimator=ValueAnimator.ofFloat(mCurData,data);
+    public void setPercentData(int data, TimeInterpolator interpolator){
+        ValueAnimator valueAnimator=ValueAnimator.ofInt(mCurData,data);
         valueAnimator.setDuration((long) (Math.abs(mCurData-data)*30));
         valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                float value= (float) valueAnimator.getAnimatedValue();
-                mCurData=(float)(Math.round(value*10))/10;
+                int value= (int) valueAnimator.getAnimatedValue();
+                mCurData=(int)(Math.round(value*10))/10;
                 invalidate();
             }
         });

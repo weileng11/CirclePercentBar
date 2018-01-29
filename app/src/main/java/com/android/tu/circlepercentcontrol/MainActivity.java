@@ -19,13 +19,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         circlePercentBar= (CirclePercentBar) findViewById(R.id.circle_bar);
-        circlePercentBar.setPercentData(55.2f,new DecelerateInterpolator());
+        circlePercentBar.setPercentData(55,new DecelerateInterpolator());
 
         startBtn= (Button) findViewById(R.id.start_btn);
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                circlePercentBar.setPercentData((float) (100*Math.random()),new DecelerateInterpolator());
+                circlePercentBar.setPercentData((int) (100*Math.random()),new DecelerateInterpolator());
             }
         });
     }
